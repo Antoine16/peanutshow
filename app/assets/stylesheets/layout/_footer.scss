@@ -1,0 +1,49 @@
+.footer-wagon-brand img {
+  width: 150px;
+  margin: 10px;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.footer {
+  display: inline-block;
+  width: 100%;
+  padding: 1rem;
+  background-color: #0F3B49;
+  text-align: center;
+}
+
+.f_right {
+    float: right;
+}
+
+.footer hr {
+    margin: 14px 0 0;
+    width: 100%;
+    height: 4px;
+    background: $green;
+    border: none;
+}
+
+a{
+  color: white;
+  font-weight: 200;
+}
+
+.list-inline  {
+  padding-left: 50px;
+  padding-top: 25px;
+}
+
+#logo-footer {
+  padding-right: 55px;
+}

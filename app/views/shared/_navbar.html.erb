@@ -1,0 +1,39 @@
+
+<div class="navbar-wagon <%= "#{controller_name}-#{action_name}" %>">
+
+  <!-- Logo -->
+  <%= link_to root_path, class: "navbar-wagon-brand" do %>
+    <%= image_tag "peanut-blanc.png" %>
+  <% end %>
+
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+ <!-- Button (call-to-action) -->
+      <%= link_to "#", class: "navbar-wagon-item navbar-wagon-button btn", id: "CTA" do %>
+        <i class="fa fa-credit-card" aria-hidden="true"></i> <%= t(".top_call_to_action", default: "Demander un prêt") %>
+      <% end %>
+       <!-- Button loan) -->
+
+            <%= link_to  new_loan_path, class: "navbar-wagon-item navbar-wagon-button-give btn", id: "CTC" do %>
+        <i class="fa fa-money" aria-hidden="true"></i> <%= t(".top_call_to_action", default: "Prêter de l'argent") %>
+      <% end %>
+  </div>
+
+  <!-- Dropdown list appearing on mobile only -->
+  <div class="navbar-wagon-item hidden-md hidden-lg">
+    <div class="dropdown">
+      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <li><%= link_to "#", class: "navbar-wagon-item navbar-wagon-button btn" do %>
+        <i class="fa fa-credit-card" aria-hidden="true"></i> <%= t(".top_call_to_action", default: "Demander un prêt") %>
+      <% end %>
+        <li><%= link_to  new_loan_path, class: "navbar-wagon-item navbar-wagon-button btn", id: "CTC" do %>
+        <i class="fa fa-money" aria-hidden="true"></i> <%= t(".top_call_to_action", default: "Prêter de l'argent") %>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+  <%= render 'shared/flashes' %>
+</div>
+
+

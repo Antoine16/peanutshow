@@ -1,0 +1,30 @@
+<div class="banner-signup container-fluid text-center" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.1) 50%),url(https://images.unsplash.com/photo-1449603540252-92888fea2f60?dpr=1&amp;auto=format&amp;fit=crop&amp;w=1500&amp;h=1000&amp;q=80&amp;cs=tinysrgb&amp;crop=); background-size: cover;">
+
+  <div class="parent margin-clear col-sm-4 col-sm-offset-4 box">
+    <div>
+      <h5>
+        <br>Merci de votre intérêt,<br> Peanut est actuellement en cours de développement !
+        <br>Pour être averti de son lancement, renseigner votre email ci-dessous.
+
+      </h5>
+    </div>
+  </div>
+  <div class="parent margin-clear col-sm-4 col-sm-offset-4 box">
+    <div class="form-style-5 margin-side">
+
+      <%= simple_form_for @borrower do |f| %>
+        <%= f.error_notification %>
+        <div class="form-inputs">
+          <%= f.input :email, required: true, autofocus: true, placeholder: "nom@email.com" %>
+        </div>
+        <div class="form-inputs">
+          <%= f.input :comment, label: "Un avis", autofocus: true, placeholder: "Des commentaires ? Des suggestions ? Allez-y, c'est ici !" %>
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit, "Valider" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
