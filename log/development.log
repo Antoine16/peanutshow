@@ -1922,3 +1922,354 @@ Processing by PagesController#sim as JS
 Completed 200 OK in 97ms (Views: 61.2ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2017-08-30 20:38:20 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered shared/_credit_simulation_form.html.erb (132.2ms)
+  Rendered pages/home.html.erb within layouts/application (3517.0ms)
+  Rendered shared/_flashes.html.erb (1.1ms)
+  Rendered shared/_navbar.html.erb (10.4ms)
+  Rendered shared/_footer.html.erb (3.2ms)
+Completed 200 OK in 3784ms (Views: 3749.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sim?sim%5Bamount%5D=50&sim%5Bnb_days%5D=5" for ::1 at 2017-08-30 20:38:25 +0200
+Processing by PagesController#sim as JS
+  Parameters: {"sim"=>{"amount"=>"50", "nb_days"=>"5"}}
+  Rendering pages/sim.js.erb
+  Rendered pages/sim.js.erb (1.3ms)
+Completed 200 OK in 179ms (Views: 41.3ms | ActiveRecord: 94.7ms)
+
+
+Started GET "/credits/new" for ::1 at 2017-08-30 20:38:30 +0200
+Processing by CreditsController#new as HTML
+  Rendering credits/new.html.erb within layouts/application
+  Rendered credits/new.html.erb within layouts/application (4.0ms)
+  Rendered shared/_flashes.html.erb (1.4ms)
+  Rendered shared/_navbar.html.erb (9.7ms)
+  Rendered shared/_footer.html.erb (2.6ms)
+Completed 200 OK in 125ms (Views: 119.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/credits" for ::1 at 2017-08-30 20:38:31 +0200
+Processing by CreditsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KRgxzBBnnmtgMSCgEvCIh7z4TwlCTk8LXL6oFkN/CP+KXniNd5AGWvRfP98JXg+qqLm4qxfSToEZSkIh+P4d7g==", "commit"=>"Valider ce crédit"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (76.2ms)[0m  [1m[32mINSERT INTO "credits" ("amount_cents", "interest_cents", "refund_at", "created_at", "updated_at", "total_amount_cents") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount_cents", 5000], ["interest_cents", 250], ["refund_at", Mon, 04 Sep 2017], ["created_at", 2017-08-30 18:38:31 UTC], ["updated_at", 2017-08-30 18:38:31 UTC], ["total_amount_cents", 5250]]
+  [1m[35m (31.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/borrowers/new
+Completed 302 Found in 147ms (ActiveRecord: 107.6ms)
+
+
+Started GET "/borrowers/new" for ::1 at 2017-08-30 20:38:31 +0200
+Processing by BorrowersController#new as HTML
+  Rendering borrowers/new.html.erb within layouts/application
+  Rendered borrowers/new.html.erb within layouts/application (90.2ms)
+  Rendered shared/_flashes.html.erb (0.7ms)
+  Rendered shared/_navbar.html.erb (7.1ms)
+  Rendered shared/_footer.html.erb (3.0ms)
+Completed 200 OK in 212ms (Views: 195.8ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/loans/new" for ::1 at 2017-08-30 20:38:37 +0200
+Processing by LoansController#new as HTML
+  Rendering loans/new.html.erb within layouts/application
+  Rendered loans/new.html.erb within layouts/application (7.6ms)
+  Rendered shared/_flashes.html.erb (0.7ms)
+  Rendered shared/_navbar.html.erb (7.9ms)
+  Rendered shared/_footer.html.erb (2.6ms)
+Completed 200 OK in 176ms (Views: 157.3ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/loans" for ::1 at 2017-08-30 20:38:41 +0200
+Processing by LoansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mqQDII6OccMsqK6DyhGS2vXEoB6BvKt4Vg21CFgoLtQ54kph6Xnp8rjGsfzRvxX34YVXvNQgqvIT+V8/46k7xQ==", "loan"=>{"capital"=>""}, "commit"=>"Investir votre argent"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Redirected to http://localhost:3000/loaners/new
+Completed 302 Found in 8ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/loaners/new" for ::1 at 2017-08-30 20:38:41 +0200
+Processing by LoanersController#new as HTML
+  Rendering loaners/new.html.erb within layouts/application
+  Rendered loaners/new.html.erb within layouts/application (15.5ms)
+  Rendered shared/_flashes.html.erb (1.0ms)
+  Rendered shared/_navbar.html.erb (8.5ms)
+  Rendered shared/_footer.html.erb (3.9ms)
+Completed 200 OK in 159ms (Views: 141.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/loaners/new" for ::1 at 2017-08-30 20:39:59 +0200
+Processing by LoanersController#new as HTML
+  Rendering loaners/new.html.erb within layouts/application
+  Rendered loaners/new.html.erb within layouts/application (13.4ms)
+  Rendered shared/_flashes.html.erb (0.9ms)
+  Rendered shared/_navbar.html.erb (8.1ms)
+  Rendered shared/_footer.html.erb (4.7ms)
+Completed 200 OK in 137ms (Views: 134.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/loaners/new" for ::1 at 2017-08-30 20:40:47 +0200
+Processing by LoanersController#new as HTML
+  Rendering loaners/new.html.erb within layouts/application
+  Rendered loaners/new.html.erb within layouts/application (14.2ms)
+  Rendered shared/_flashes.html.erb (0.8ms)
+  Rendered shared/_navbar.html.erb (7.3ms)
+  Rendered shared/_footer.html.erb (3.0ms)
+Completed 200 OK in 138ms (Views: 134.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/loaners/new" for ::1 at 2017-08-30 20:41:17 +0200
+Processing by LoanersController#new as HTML
+  Rendering loaners/new.html.erb within layouts/application
+  Rendered loaners/new.html.erb within layouts/application (13.9ms)
+  Rendered shared/_flashes.html.erb (1.0ms)
+  Rendered shared/_navbar.html.erb (8.0ms)
+  Rendered shared/_footer.html.erb (3.5ms)
+Completed 200 OK in 156ms (Views: 153.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-08-30 20:41:30 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered shared/_credit_simulation_form.html.erb (1.1ms)
+  Rendered pages/home.html.erb within layouts/application (19.3ms)
+  Rendered shared/_flashes.html.erb (0.9ms)
+  Rendered shared/_navbar.html.erb (7.4ms)
+  Rendered shared/_footer.html.erb (2.9ms)
+Completed 200 OK in 140ms (Views: 137.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sim?sim%5Bamount%5D=50&sim%5Bnb_days%5D=5" for ::1 at 2017-08-30 20:41:31 +0200
+Processing by PagesController#sim as JS
+  Parameters: {"sim"=>{"amount"=>"50", "nb_days"=>"5"}}
+  Rendering pages/sim.js.erb
+  Rendered pages/sim.js.erb (1.6ms)
+Completed 200 OK in 44ms (Views: 37.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/credits/new" for ::1 at 2017-08-30 20:41:32 +0200
+Processing by CreditsController#new as HTML
+  Rendering credits/new.html.erb within layouts/application
+  Rendered credits/new.html.erb within layouts/application (3.1ms)
+  Rendered shared/_flashes.html.erb (0.6ms)
+  Rendered shared/_navbar.html.erb (7.3ms)
+  Rendered shared/_footer.html.erb (3.8ms)
+Completed 200 OK in 136ms (Views: 131.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/credits" for ::1 at 2017-08-30 20:41:34 +0200
+Processing by CreditsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FIrgv25Bln764I6XmVx/cfwiyZ3S5kLNwKmZaHfGHPS3zKn+CbYOT26OkeiC8vhc6GM+P4d6Q0eFXXNfzEcJ5Q==", "commit"=>"Valider ce crédit"}
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "credits" ("amount_cents", "interest_cents", "refund_at", "created_at", "updated_at", "total_amount_cents") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount_cents", 5000], ["interest_cents", 250], ["refund_at", Mon, 04 Sep 2017], ["created_at", 2017-08-30 18:41:34 UTC], ["updated_at", 2017-08-30 18:41:34 UTC], ["total_amount_cents", 5250]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/borrowers/new
+Completed 302 Found in 14ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/borrowers/new" for ::1 at 2017-08-30 20:41:35 +0200
+Processing by BorrowersController#new as HTML
+  Rendering borrowers/new.html.erb within layouts/application
+  Rendered borrowers/new.html.erb within layouts/application (14.7ms)
+  Rendered shared/_flashes.html.erb (0.7ms)
+  Rendered shared/_navbar.html.erb (7.0ms)
+  Rendered shared/_footer.html.erb (2.9ms)
+Completed 200 OK in 140ms (Views: 136.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/loans/new" for ::1 at 2017-08-30 20:42:52 +0200
+Processing by LoansController#new as HTML
+  Rendering loans/new.html.erb within layouts/application
+  Rendered loans/new.html.erb within layouts/application (8.8ms)
+  Rendered shared/_flashes.html.erb (0.7ms)
+  Rendered shared/_navbar.html.erb (6.5ms)
+  Rendered shared/_footer.html.erb (2.5ms)
+Completed 200 OK in 115ms (Views: 112.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/loans" for ::1 at 2017-08-30 20:42:54 +0200
+Processing by LoansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"64UQLt0t+R7aAfj625FlCfPzCv0sxrzOOkh/2tOnbItIw1lvutphL05v54XAP+Ik57L9X3lavUR/vJXtaCZ5mg==", "loan"=>{"capital"=>""}, "commit"=>"Investir votre argent"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Redirected to http://localhost:3000/loaners/new
+Completed 302 Found in 7ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/loaners/new" for ::1 at 2017-08-30 20:42:54 +0200
+Processing by LoanersController#new as HTML
+  Rendering loaners/new.html.erb within layouts/application
+  Rendered loaners/new.html.erb within layouts/application (13.0ms)
+  Rendered shared/_flashes.html.erb (0.7ms)
+  Rendered shared/_navbar.html.erb (7.4ms)
+  Rendered shared/_footer.html.erb (2.6ms)
+Completed 200 OK in 127ms (Views: 124.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-08-30 20:45:07 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered shared/_credit_simulation_form.html.erb (1.3ms)
+  Rendered pages/home.html.erb within layouts/application (17.5ms)
+  Rendered shared/_flashes.html.erb (0.8ms)
+  Rendered shared/_navbar.html.erb (6.8ms)
+  Rendered shared/_footer.html.erb (2.8ms)
+Completed 200 OK in 124ms (Views: 121.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sim?sim%5Bamount%5D=50&sim%5Bnb_days%5D=5" for ::1 at 2017-08-30 20:45:08 +0200
+Processing by PagesController#sim as JS
+  Parameters: {"sim"=>{"amount"=>"50", "nb_days"=>"5"}}
+  Rendering pages/sim.js.erb
+  Rendered pages/sim.js.erb (1.0ms)
+Completed 200 OK in 46ms (Views: 39.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/credits/new" for ::1 at 2017-08-30 20:45:09 +0200
+Processing by CreditsController#new as HTML
+  Rendering credits/new.html.erb within layouts/application
+  Rendered credits/new.html.erb within layouts/application (2.3ms)
+  Rendered shared/_flashes.html.erb (0.6ms)
+  Rendered shared/_navbar.html.erb (6.3ms)
+  Rendered shared/_footer.html.erb (3.6ms)
+Completed 200 OK in 118ms (Views: 114.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/credits" for ::1 at 2017-08-30 20:45:11 +0200
+Processing by CreditsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"h9edQKFqtoi5y1yQz8ihe4Cv7EeuCbIBBWtOPQkUREskkdQBxp0uuS2lQ+/UZiZWlO4b5fuVs4tAn6QKspVRWg==", "commit"=>"Valider ce crédit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "credits" ("amount_cents", "interest_cents", "refund_at", "created_at", "updated_at", "total_amount_cents") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount_cents", 5000], ["interest_cents", 250], ["refund_at", Mon, 04 Sep 2017], ["created_at", 2017-08-30 18:45:11 UTC], ["updated_at", 2017-08-30 18:45:11 UTC], ["total_amount_cents", 5250]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/borrowers/new
+Completed 302 Found in 10ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/borrowers/new" for ::1 at 2017-08-30 20:45:11 +0200
+Processing by BorrowersController#new as HTML
+  Rendering borrowers/new.html.erb within layouts/application
+  Rendered borrowers/new.html.erb within layouts/application (10.1ms)
+  Rendered shared/_flashes.html.erb (0.8ms)
+  Rendered shared/_navbar.html.erb (6.8ms)
+  Rendered shared/_footer.html.erb (2.8ms)
+Completed 200 OK in 121ms (Views: 118.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/loans/new" for ::1 at 2017-08-30 20:45:35 +0200
+Processing by LoansController#new as HTML
+  Rendering loans/new.html.erb within layouts/application
+  Rendered loans/new.html.erb within layouts/application (7.8ms)
+  Rendered shared/_flashes.html.erb (0.7ms)
+  Rendered shared/_navbar.html.erb (7.0ms)
+  Rendered shared/_footer.html.erb (3.2ms)
+Completed 200 OK in 141ms (Views: 119.7ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/loans" for ::1 at 2017-08-30 20:45:37 +0200
+Processing by LoansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1Xs5T6WYSrkOj2U8lylE1gOp2mXsBZYTzai+tc5JQpF2PXAOwm/SiJrhekOMh8P7F+gtx7mZl5mIXFSCdchXgA==", "loan"=>{"capital"=>""}, "commit"=>"Investir votre argent"}
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 523ms (ActiveRecord: 1.1ms)
+
+
+
+NameError - undefined local variable or method `new_borrowers_path' for #<LoansController:0x007fb419fc2860>
+Did you mean?  new_borrower_path
+               new_borrower_url:
+  app/controllers/loans_controller.rb:13:in `create'
+  actionpack (5.0.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+  actionpack (5.0.1) lib/abstract_controller/base.rb:188:in `process_action'
+  actionpack (5.0.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+  actionpack (5.0.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (5.0.1) lib/active_support/callbacks.rb:126:in `call'
+  activesupport (5.0.1) lib/active_support/callbacks.rb:506:in `block (2 levels) in compile'
+  activesupport (5.0.1) lib/active_support/callbacks.rb:455:in `call'
+  activesupport (5.0.1) lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+  activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
+  activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+  actionpack (5.0.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (5.0.1) lib/action_controller/metal/rescue.rb:20:in `process_action'
+  actionpack (5.0.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (5.0.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (5.0.1) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.0.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (5.0.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (5.0.1) lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
+  activerecord (5.0.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (5.0.1) lib/abstract_controller/base.rb:126:in `process'
+  actionview (5.0.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (5.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+  actionpack (5.0.1) lib/action_controller/metal.rb:262:in `dispatch'
+  actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+  actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+  actionpack (5.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+  actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+  actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+  rack-pjax (1.0.0) lib/rack/pjax.rb:12:in `call'
+   () usr/local/opt/rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/bundler/gems/remotipart-cd653ddc43bb/lib/remotipart/middleware.rb:32:in `call'
+  warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+  warden (1.2.7) lib/warden/manager.rb:35:in `call'
+  rack (2.0.1) lib/rack/etag.rb:25:in `call'
+  rack (2.0.1) lib/rack/conditional_get.rb:38:in `call'
+  rack (2.0.1) lib/rack/head.rb:12:in `call'
+  rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+  rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+  actionpack (5.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.0.1) lib/active_record/migration.rb:553:in `call'
+  actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+  activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+  activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+  activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+  actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+  actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+  actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+  rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+  rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+  railties (5.0.1) lib/rails/engine.rb:522:in `call'
+  puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+  puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+  puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+  puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+  puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+Started POST "/__better_errors/d2ef8aab1b2d564d/variables" for ::1 at 2017-08-30 20:45:38 +0200
+Started POST "/loans" for ::1 at 2017-08-30 20:46:12 +0200
+Processing by LoansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1Xs5T6WYSrkOj2U8lylE1gOp2mXsBZYTzai+tc5JQpF2PXAOwm/SiJrhekOMh8P7F+gtx7mZl5mIXFSCdchXgA==", "loan"=>{"capital"=>""}, "commit"=>"Investir votre argent"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Redirected to http://localhost:3000/borrowers/new
+Completed 302 Found in 29ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/borrowers/new" for ::1 at 2017-08-30 20:46:12 +0200
+Processing by BorrowersController#new as HTML
+  Rendering borrowers/new.html.erb within layouts/application
+  Rendered borrowers/new.html.erb within layouts/application (14.6ms)
+  Rendered shared/_flashes.html.erb (0.9ms)
+  Rendered shared/_navbar.html.erb (7.9ms)
+  Rendered shared/_footer.html.erb (3.3ms)
+Completed 200 OK in 166ms (Views: 137.4ms | ActiveRecord: 2.7ms)
+
+
